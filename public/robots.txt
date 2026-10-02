@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://swissfitclub.com/sitemap.xml
