@@ -29,6 +29,7 @@ npm install
 npm run dev       # geliştirme sunucusu: http://localhost:5173
 npm run build     # yayına hazır dosyalar dist/ klasörüne çıkar
 npm run preview   # derlenmiş siteyi yerelde önizle
+npm run build:single  # her şey gömülü tek dosya: dist-single/index.html (çift tıklayınca açılır)
 ```
 
 ## Yayına alma

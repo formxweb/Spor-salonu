@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite';
+import { viteSingleFile } from 'vite-plugin-singlefile';
 import { existsSync, readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 
@@ -44,11 +45,32 @@ function inlineIcons() {
   };
 }
 
-export default defineConfig({
-  base: './',
-  plugins: [inlineIcons()],
-  build: {
-    assetsInlineLimit: 0,
-    cssCodeSplit: false,
-  },
+/** Tek dosya modunda favicon da HTML'in içine gömülür (çift tıkla açılan sürüm için). */
+function inlineFavicon() {
+  return {
+    name: 'inline-favicon',
+    transformIndexHtml(html) {
+      const svg = readFileSync(`${root}public/favicon.svg`, 'utf8');
+      const dataUri = `data:image/svg+xml,${encodeURIComponent(svg)}`;
+      return html
+        .replace('href="favicon.svg"', `href="${dataUri}"`)
+        .replace(/\s*<link rel="(?:apple-touch-icon|manifest)"[^>]*>/g, '');
+    },
+  };
+}
+
+export default defineConfig(({ mode }) => {
+  // `npm run build:single` → tüm CSS, JS ve görseller tek bir HTML dosyasına gömülür.
+  const single = mode === 'single';
+
+  return {
+    base: './',
+    plugins: single ? [inlineIcons(), inlineFavicon(), viteSingleFile()] : [inlineIcons()],
+    build: {
+      outDir: single ? 'dist-single' : 'dist',
+      assetsInlineLimit: single ? Number.MAX_SAFE_INTEGER : 0,
+      cssCodeSplit: false,
+      copyPublicDir: !single,
+    },
+  };
 });
