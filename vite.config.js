@@ -5,11 +5,7 @@ import { fileURLToPath } from 'node:url';
 
 const root = fileURLToPath(new URL('.', import.meta.url));
 
-/**
- * HTML içindeki <i data-icon="isim" class="..."></i> etiketlerini derleme
- * sırasında satır içi SVG'ye çevirir. Önce src/icons klasörüne, sonra
- * lucide-static paketine bakar. Böylece çalışma anında ikon kütüphanesi yüklenmez.
- */
+// Replaces <i data-icon="name"></i> with inline SVG at build time (src/icons first, then Lucide).
 function inlineIcons() {
   const cache = new Map();
 
@@ -20,7 +16,7 @@ function inlineIcons() {
       `${root}node_modules/lucide-static/icons/${name}.svg`,
     ];
     const file = candidates.find((path) => existsSync(path));
-    if (!file) throw new Error(`İkon bulunamadı: ${name}`);
+    if (!file) throw new Error(`Unknown icon: ${name}`);
     const svg = readFileSync(file, 'utf8')
       .replace(/<!--[\s\S]*?-->/g, '')
       .replace(/\s*\n\s*/g, ' ')
@@ -45,7 +41,7 @@ function inlineIcons() {
   };
 }
 
-/** Tek dosya modunda favicon da HTML'in içine gömülür (çift tıkla açılan sürüm için). */
+// The single-file build is opened from disk, so the favicon is embedded and unresolvable links are dropped.
 function inlineFavicon() {
   return {
     name: 'inline-favicon',
@@ -60,7 +56,6 @@ function inlineFavicon() {
 }
 
 export default defineConfig(({ mode }) => {
-  // `npm run build:single` → tüm CSS, JS ve görseller tek bir HTML dosyasına gömülür.
   const single = mode === 'single';
 
   return {
@@ -69,7 +64,6 @@ export default defineConfig(({ mode }) => {
     build: {
       outDir: single ? 'dist-single' : 'dist',
       assetsInlineLimit: single ? Number.MAX_SAFE_INTEGER : 0,
-      cssCodeSplit: false,
       copyPublicDir: !single,
     },
   };

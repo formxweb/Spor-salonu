@@ -1,0 +1,65 @@
+.menu {
+  position: fixed;
+  inset: 0;
+  z-index: 105;
+  visibility: hidden;
+}
+
+.menu__bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(120% 80% at 100% 0%, rgba(230, 0, 0, 0.35), transparent 60%), var(--bg);
+  clip-path: circle(0% at calc(100% - 44px) 42px);
+}
+
+.menu__inner {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: calc(var(--nav-h) + 32px) var(--gutter) 40px;
+}
+
+.menu__links {
+  display: grid;
+  gap: 4px;
+}
+
+.menu__links a {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  font-family: var(--font-display);
+  font-weight: 850;
+  font-stretch: 75%;
+  font-size: clamp(2.8rem, 12vw, 5.5rem);
+  line-height: 1;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+
+.menu__links a span {
+  font-family: var(--font-tech);
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: var(--red);
+}
+
+.menu__links a:hover {
+  color: var(--red-hot);
+}
+
+.menu__foot {
+  display: grid;
+  gap: 8px;
+  font-family: var(--font-tech);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.menu__foot a {
+  color: var(--text);
+}

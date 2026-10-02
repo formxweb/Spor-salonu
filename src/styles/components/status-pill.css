@@ -1,0 +1,49 @@
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 32px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+  font-family: var(--font-tech);
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.status-pill__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--dim);
+}
+
+.status-pill.is-open .status-pill__dot {
+  background: var(--green);
+  box-shadow: 0 0 0 0 rgba(47, 220, 122, 0.6);
+  animation: ping 2s infinite;
+}
+
+.status-pill.is-closed .status-pill__dot {
+  background: var(--red);
+}
+
+@keyframes ping {
+  0% {
+    box-shadow: 0 0 0 0 rgba(47, 220, 122, 0.55);
+  }
+  80%,
+  100% {
+    box-shadow: 0 0 0 9px rgba(47, 220, 122, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .status-pill__dot {
+    animation: none !important;
+  }
+}

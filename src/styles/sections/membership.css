@@ -1,0 +1,233 @@
+.plans {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 20px;
+  align-items: stretch;
+}
+
+.plan {
+  border-radius: 32px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  padding: clamp(24px, 3.4vw, 48px);
+}
+
+.plan-switch {
+  position: relative;
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  padding: 6px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.plan-switch button {
+  position: relative;
+  z-index: 1;
+  padding: 12px 18px;
+  border-radius: 999px;
+  font-family: var(--font-tech);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  transition: color 0.4s;
+}
+
+.plan-switch button.is-active,
+.plan-switch button:hover {
+  color: #fff;
+}
+
+.plan__body {
+  margin-top: clamp(28px, 4vw, 48px);
+}
+
+.plan__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+}
+
+.plan__term {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-stretch: 72%;
+  font-size: clamp(2.8rem, 5.6vw, 5rem);
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.plan__badge {
+  font-family: var(--font-tech);
+  font-size: 0.55rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--red);
+  color: var(--red-hot);
+}
+
+.plan__badge:empty {
+  display: none;
+}
+
+.plan__desc {
+  margin-top: 16px;
+  max-width: 520px;
+  color: var(--muted);
+  font-size: 1.05rem;
+  min-height: 3.4em;
+}
+
+.plan__price {
+  display: grid;
+  gap: 4px;
+  margin: 28px 0;
+  padding: 22px 0;
+  border-block: 1px solid var(--line);
+}
+
+.plan__price-label {
+  font-family: var(--font-tech);
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+
+.plan__price strong {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-stretch: 85%;
+  font-size: clamp(1.6rem, 2.4vw, 2.2rem);
+  line-height: 1.1;
+}
+
+.plan__price small {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.plan__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px 24px;
+  margin-bottom: 32px;
+}
+
+.plan__list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.plan__list .icon {
+  margin-top: 4px;
+  color: var(--red-hot);
+}
+
+.trial {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 20px;
+  padding: clamp(28px, 3.4vw, 48px);
+  border-radius: 32px;
+  overflow: hidden;
+  isolation: isolate;
+  background: radial-gradient(120% 90% at 100% 0%, #ff3030 0%, var(--red) 35%, var(--red-deep) 100%);
+  box-shadow: 0 40px 100px -40px var(--red-glow);
+  min-height: 520px;
+}
+
+.trial__glow {
+  position: absolute;
+  inset: -50%;
+  z-index: -1;
+  background: conic-gradient(from 0deg, transparent 0 70%, rgba(255, 255, 255, 0.35) 80%, transparent 90%);
+  animation: spin 9s linear infinite;
+  opacity: 0.45;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.trial__mark {
+  position: absolute;
+  top: -6%;
+  right: -12%;
+  width: 70%;
+  height: auto;
+  color: rgba(0, 0, 0, 0.18);
+  z-index: -1;
+  transform: rotate(-12deg);
+}
+
+.trial .eyebrow {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.trial .eyebrow__dot {
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.25);
+}
+
+.trial__title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-stretch: 72%;
+  font-size: clamp(2.8rem, 4.8vw, 4.6rem);
+  line-height: 0.88;
+  text-transform: uppercase;
+}
+
+.trial p:not(.eyebrow) {
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 420px;
+}
+
+@media (max-width: 1100px) {
+  .plans {
+    grid-template-columns: 1fr;
+  }
+
+  .trial {
+    min-height: 440px;
+  }
+}
+
+@media (max-width: 760px) {
+  .plan__list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .plan-switch {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+  }
+
+  .plan-switch button {
+    padding: 12px 6px;
+    font-size: 0.52rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trial__glow {
+    animation: none !important;
+  }
+}

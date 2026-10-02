@@ -1,0 +1,55 @@
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand__mark {
+  width: 40px;
+  height: auto;
+  color: var(--red);
+  filter: drop-shadow(0 0 14px rgba(230, 0, 0, 0.45));
+  transition: transform 0.6s var(--ease-out);
+}
+
+.brand:hover .brand__mark {
+  transform: rotate(-8deg) scale(1.06);
+}
+
+.brand__word {
+  display: grid;
+  line-height: 1;
+}
+
+.brand__swiss {
+  font-family: var(--font-tech);
+  font-size: 1.02rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+
+.brand__sub {
+  margin-top: 5px;
+  font-family: var(--font-tech);
+  font-size: 0.5rem;
+  letter-spacing: 0.62em;
+  text-transform: uppercase;
+  transform: skewX(-12deg);
+  transform-origin: left;
+  color: var(--text);
+}
+
+.brand__sub b {
+  font-weight: 400;
+  color: var(--red);
+}
+
+@media (max-width: 640px) {
+  .brand__mark {
+    width: 34px;
+  }
+
+  .brand__swiss {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,89 @@
+.cursor {
+  display: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .js .cursor {
+    display: block;
+  }
+
+  .has-cursor,
+  .has-cursor a,
+  .has-cursor button,
+  .has-cursor summary,
+  .has-cursor label {
+    cursor: none;
+  }
+}
+
+.cursor__dot,
+.cursor__ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 400;
+  pointer-events: none;
+  border-radius: 50%;
+}
+
+.cursor__dot {
+  width: 6px;
+  height: 6px;
+  margin: -3px 0 0 -3px;
+  background: var(--red-hot);
+}
+
+.cursor__ring {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  margin: -20px 0 0 -20px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  transition: width 0.45s var(--ease-out), height 0.45s var(--ease-out), margin 0.45s var(--ease-out),
+    background 0.35s, border-color 0.35s, opacity 0.3s;
+}
+
+.cursor__label {
+  font-family: var(--font-tech);
+  font-size: 0.56rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #fff;
+  opacity: 0;
+  transform: scale(0.6);
+  transition: opacity 0.3s, transform 0.45s var(--ease-out);
+  white-space: nowrap;
+}
+
+.cursor.is-hover .cursor__ring {
+  width: 64px;
+  height: 64px;
+  margin: -32px 0 0 -32px;
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.cursor.is-label .cursor__ring {
+  width: 104px;
+  height: 104px;
+  margin: -52px 0 0 -52px;
+  background: var(--red);
+  border-color: var(--red);
+}
+
+.cursor.is-label .cursor__label {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.cursor.is-label .cursor__dot,
+.cursor.is-hidden .cursor__dot,
+.cursor.is-hidden .cursor__ring {
+  opacity: 0;
+}
+
+.has-cursor input,
+.has-cursor textarea {
+  cursor: text;
+}

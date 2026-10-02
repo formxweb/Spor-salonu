@@ -1,48 +1,51 @@
 import 'lenis/dist/lenis.css';
-import './styles/base.css';
-import './styles/sections.css';
+import './styles/main.css';
 
 import { gsap } from 'gsap';
+import { Flip } from 'gsap/Flip';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SplitText } from 'gsap/SplitText';
-import { Flip } from 'gsap/Flip';
 
-import heroLarge from './assets/images/gym-floor.webp';
-import heroSmall from './assets/images/gym-floor-sm.webp';
+import { $, fontsReady } from './js/lib/dom.js';
+import { initSmoothScroll, smoothScrollTo } from './js/lib/scroll.js';
+import { initWhatsAppLinks } from './js/lib/whatsapp.js';
 
-import { $, fontsReady } from './js/utils.js';
-import { initWhatsAppLinks } from './js/whatsapp.js';
-import { initSmoothScroll, scrollToTarget } from './js/smooth-scroll.js';
-import { runPreloader } from './js/preloader.js';
-import { initHeroGL } from './js/hero-gl.js';
-import { prepareHero } from './js/hero.js';
-import { initCursor } from './js/cursor.js';
-import { initNav } from './js/nav.js';
-import { initReveals } from './js/reveals.js';
-import { initMarquees } from './js/marquee.js';
-import { initWhy } from './js/why.js';
-import { initServices } from './js/services.js';
-import { initZoom } from './js/zoom.js';
-import { initClasses } from './js/classes.js';
-import { initHours } from './js/hours.js';
-import { initPlans } from './js/plans.js';
-import { initFaq } from './js/faq.js';
-import { initContact } from './js/contact.js';
-import { initFooter } from './js/footer.js';
+import { initCursor, initMagneticButtons } from './js/components/cursor.js';
+import { initFloatingActions } from './js/components/floating-actions.js';
+import { initMarquees } from './js/components/marquee.js';
+import { initNav } from './js/components/nav.js';
+import { runPreloader } from './js/components/preloader.js';
+import { initReveals } from './js/components/reveals.js';
+import { initScrollProgress } from './js/components/scroll-progress.js';
+
+import { initClasses } from './js/sections/classes.js';
+import { initContact } from './js/sections/contact.js';
+import { initFaq } from './js/sections/faq.js';
+import { initFooter } from './js/sections/footer.js';
+import { prepareHero } from './js/sections/hero.js';
+import { initHeroGL } from './js/sections/hero-gl.js';
+import { initHours } from './js/sections/hours.js';
+import { initPlans } from './js/sections/plans.js';
+import { initServices } from './js/sections/services.js';
+import { initWhy } from './js/sections/why.js';
+import { initZoom } from './js/sections/zoom.js';
 
 gsap.registerPlugin(ScrollTrigger, SplitText, Flip);
 
-if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+// The preloader and pinned sections assume a fresh start at the top.
+history.scrollRestoration = 'manual';
 const initialHash = location.hash;
 window.scrollTo(0, 0);
 
 async function boot() {
-  // İçerik ve etkileşimler (animasyondan bağımsız olanlar önce)
   initWhatsAppLinks();
   initHours();
   initSmoothScroll();
   initNav();
+  initScrollProgress();
+  initFloatingActions();
   initCursor();
+  initMagneticButtons();
   initServices();
   initClasses();
   initPlans();
@@ -50,9 +53,9 @@ async function boot() {
   initContact();
   initFooter();
 
-  const heroGL = initHeroGL({ hero: $('.hero'), src: { large: heroLarge, small: heroSmall } });
+  const heroGL = initHeroGL($('.hero'));
 
-  // Metin bölme işlemleri doğru ölçüm için fontları bekler (preloader bu sırada ekranı örter).
+  // Anything that splits text or measures layout waits for the web fonts.
   await fontsReady();
   const hero = prepareHero();
   initMarquees();
@@ -69,9 +72,8 @@ async function boot() {
   });
 
   ScrollTrigger.refresh();
-  if (initialHash && initialHash.length > 1 && $(initialHash)) {
-    scrollToTarget($(initialHash));
-  }
+  const target = document.getElementById(initialHash.slice(1));
+  if (target) smoothScrollTo(target);
 }
 
 boot();

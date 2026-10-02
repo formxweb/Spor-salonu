@@ -86,7 +86,6 @@
   <body>
     <a class="skip-link" href="#main">İçeriğe geç</a>
 
-    <!-- ═════════════ PRELOADER ═════════════ -->
     <div class="preloader" aria-hidden="true">
       <div class="preloader__curtain preloader__curtain--a"></div>
       <div class="preloader__curtain preloader__curtain--b"></div>
@@ -105,7 +104,6 @@
       <div class="preloader__bar"><span></span></div>
     </div>
 
-    <!-- ═════════════ GLOBAL UI ═════════════ -->
     <div class="cursor is-hidden" aria-hidden="true">
       <div class="cursor__ring"><span class="cursor__label"></span></div>
       <div class="cursor__dot"></div>
@@ -113,8 +111,7 @@
     <div class="scroll-progress" aria-hidden="true"><span></span></div>
     <div class="grain" aria-hidden="true"></div>
 
-    <!-- ═════════════ NAV ═════════════ -->
-    <header class="nav" data-nav>
+    <header class="nav">
       <div class="nav__inner">
         <a class="brand" href="#top" aria-label="Swiss Fit Club — sayfa başı">
           <i data-icon="logo-mark" class="brand__mark"></i>
@@ -145,7 +142,6 @@
       </div>
     </header>
 
-    <!-- ═════════════ MOBILE / FULLSCREEN MENU ═════════════ -->
     <div class="menu" id="menu" aria-hidden="true" inert>
       <div class="menu__bg"></div>
       <div class="menu__inner">
@@ -166,7 +162,6 @@
     </div>
 
     <main id="main">
-      <!-- ═════════════ HERO ═════════════ -->
       <section class="hero" id="top" aria-label="Swiss Fit Club">
         <div class="hero__media">
           <img
@@ -200,7 +195,7 @@
               <a
                 class="btn btn--primary btn--lg"
                 href="https://wa.me/905520346777"
-                data-wa="Merhaba, ücretsiz deneme dersi hakkında bilgi almak istiyorum."
+                data-whatsapp="Merhaba, ücretsiz deneme dersi hakkında bilgi almak istiyorum."
                 target="_blank"
                 rel="noopener"
                 data-magnetic
@@ -229,39 +224,37 @@
         <p class="hero__side" aria-hidden="true">Beykent <span lang="en">Paradise</span> AVM — 5. Kat — İstanbul</p>
       </section>
 
-      <!-- ═════════════ RIBBONS ═════════════ -->
       <div class="ribbons" aria-hidden="true">
-        <div class="ribbon ribbon--dark" data-marquee="1">
+        <div class="ribbon ribbon--dark" data-marquee="left">
           <div class="ribbon__track">
             <span>Güç</span><i data-icon="logo-mark"></i><span>Disiplin</span><i data-icon="logo-mark"></i><span>Enerji</span><i data-icon="logo-mark"></i><span>Denge</span><i data-icon="logo-mark"></i><span>Odak</span><i data-icon="logo-mark"></i><span>Dayanıklılık</span><i data-icon="logo-mark"></i>
           </div>
         </div>
-        <div class="ribbon ribbon--red" data-marquee="-1" lang="en">
+        <div class="ribbon ribbon--red" data-marquee="right" lang="en">
           <div class="ribbon__track">
             <span>HIIT</span><i data-icon="logo-mark"></i><span>Reformer Pilates</span><i data-icon="logo-mark"></i><span>Yoga</span><i data-icon="logo-mark"></i><span>Spinning</span><i data-icon="logo-mark"></i><span>Boks</span><i data-icon="logo-mark"></i><span>Body Pump</span><i data-icon="logo-mark"></i><span>Cross Training</span><i data-icon="logo-mark"></i><span>Zumba</span><i data-icon="logo-mark"></i><span>Swiss Stronger</span><i data-icon="logo-mark"></i>
           </div>
         </div>
       </div>
 
-      <!-- ═════════════ ABOUT ═════════════ -->
       <section class="about section" id="kulup">
         <div class="container">
           <div class="section-tag" data-reveal="fade"><span class="section-tag__num">01</span><span class="eyebrow">Kulüp</span></div>
 
-          <p class="about__statement" data-scrub-words>
+          <p class="about__statement" data-reveal="words">
             Swiss Fit Club, Beylikdüzü'nün kalbinde modern ekipmanları, uzman kadrosu ve premium atmosferiyle spor salonu standartlarını
             <em>yeniden tanımlıyor.</em> Burada her antrenman, daha güçlü bir sen için atılmış bir adım.
           </p>
 
           <div class="about__grid">
-            <figure class="about__media" data-img-reveal>
+            <figure class="about__media" data-reveal="image">
               <img
                 src="/src/assets/images/pt-portrait.webp"
                 alt="Swiss Fit Club eğitmeni bir üyeye birebir antrenmanda eşlik ediyor"
                 loading="lazy"
                 width="720"
                 height="900"
-                data-parallax-img
+                data-parallax
               />
               <figcaption><span class="eyebrow__dot"></span>Birebir koçluk · Sertifikalı eğitmenler</figcaption>
             </figure>
@@ -301,7 +294,6 @@
         </div>
       </section>
 
-      <!-- ═════════════ WHY (HORIZONTAL) ═════════════ -->
       <section class="why" id="neden" aria-labelledby="why-title">
         <div class="why__pin">
           <div class="why__track">
@@ -372,7 +364,7 @@
               <a
                 class="btn btn--primary"
                 href="https://wa.me/905520346777"
-                data-wa="Merhaba, ücretsiz deneme dersi hakkında bilgi almak istiyorum."
+                data-whatsapp="Merhaba, ücretsiz deneme dersi hakkında bilgi almak istiyorum."
                 target="_blank"
                 rel="noopener"
                 data-magnetic
@@ -386,7 +378,6 @@
         </div>
       </section>
 
-      <!-- ═════════════ SERVICES (BENTO) ═════════════ -->
       <section class="services section" id="hizmetler">
         <div class="container">
           <div class="section-head">
@@ -522,7 +513,6 @@
         </div>
       </section>
 
-      <!-- ═════════════ ZOOM ═════════════ -->
       <section class="zoom" aria-label="2500 metrekare antrenman alanı">
         <div class="zoom__sticky">
           <p class="zoom__big" aria-hidden="true"><span>2500</span><span>m²</span></p>
@@ -542,7 +532,6 @@
         </div>
       </section>
 
-      <!-- ═════════════ CLASSES ═════════════ -->
       <section class="classes section" id="dersler">
         <div class="container">
           <div class="section-head">
@@ -564,7 +553,7 @@
             <button class="filter" type="button" data-filter="kardiyo" aria-pressed="false">Kardiyo <sup>4</sup></button>
             <button class="filter" type="button" data-filter="guc" aria-pressed="false">Güç <sup>6</sup></button>
             <button class="filter" type="button" data-filter="esneklik" aria-pressed="false">Esneklik <sup>3</sup></button>
-            <span class="filters__indicator" aria-hidden="true"></span>
+            <span class="segment-indicator" aria-hidden="true"></span>
           </div>
 
           <ol class="class-list">
@@ -579,7 +568,7 @@
               <div class="class-row__body">
                 <div class="class-row__inner">
                   <p>Yüksek yoğunluklu interval antrenmanlarla kısa sürede maksimum kalori yak.</p>
-                  <a class="link-arrow" href="https://wa.me/905520346777" data-wa="Merhaba, HIIT dersi hakkında bilgi almak istiyorum." target="_blank" rel="noopener">Bu derse katıl <i data-icon="arrow-up-right"></i></a>
+                  <a class="link-arrow" href="https://wa.me/905520346777" data-whatsapp="Merhaba, HIIT dersi hakkında bilgi almak istiyorum." target="_blank" rel="noopener">Bu derse katıl <i data-icon="arrow-up-right"></i></a>
                 </div>
               </div>
             </li>
@@ -594,7 +583,7 @@
               <div class="class-row__body">
                 <div class="class-row__inner">
                   <p>Esnekliğini artır, postürünü düzelt ve kas tonusunu geliştir.</p>
-                  <a class="link-arrow" href="https://wa.me/905520346777" data-wa="Merhaba, Pilates dersi hakkında bilgi almak istiyorum." target="_blank" rel="noopener">Bu derse katıl <i data-icon="arrow-up-right"></i></a>
+                  <a class="link-arrow" href="https://wa.me/905520346777" data-whatsapp="Merhaba, Pilates dersi hakkında bilgi almak istiyorum." target="_blank" rel="noopener">Bu derse katıl <i data-icon="arrow-up-right"></i></a>
                 </div>
               </div>
             </li>
@@ -609,7 +598,7 @@
               <div class="class-row__body">
                 <div class="class-row__inner">
                   <p>Zihin ve beden uyumunu sağlayarak stresten arınmanın en etkili yolu.</p>
-                  <a class="link-arrow" href="https://wa.me/905520346777" data-wa="Merhaba, Yoga dersi hakkında bilgi almak istiyorum." target="_blank" rel="noopener">Bu derse katıl <i data-icon="arrow-up-right"></i></a>
+                  <a class="link-arrow" href="https://wa.me/905520346777" data-whatsapp="Merhaba, Yoga dersi hakkında bilgi almak istiyorum." target="_blank" rel="noopener">Bu derse katıl <i data-icon="arrow-up-right"></i></a>
                 </div>
               </div>
             </li>
@@ -624,7 +613,7 @@
               <div class="class-row__body">
                 <div class="class-row__inner">
                   <p>Günlük hayatta kullandığın hareketleri güçlendiren fonksiyonel antrenmanlar.</p>
-                  <a class="link-arrow" href="https://wa.me/905520346777" data-wa="Merhaba, Functional Training dersi hakkında bilgi almak istiyorum." target="_blank" rel="noopener">Bu derse katıl <i data-icon="arrow-up-right"></i></a>
+                  <a class="link-arrow" href="https://wa.me/905520346777" data-whatsapp="Merhaba, Functional Training dersi hakkında bilgi almak istiyorum." target="_blank" rel="noopener">Bu derse katıl <i data-icon="arrow-up-right"></i></a>
                 </div>
               </div>
             </li>
@@ -639,7 +628,7 @@
               <div class="class-row__body">
                 <div class="class-row__inner">
                   <p>Yüksek tempolu bisiklet derslerinde enerjini zirveye taşı.</p>
-                  <a class="link-arrow" href="https://wa.me/905520346777" data-wa="Merhaba, Spinning dersi hakkında bilgi almak istiyorum." target="_blank" rel="noopener">Bu derse katıl <i data-icon="arrow-up-right"></i></a>
+                  <a class="link-arrow" href="https://wa.me/905520346777" data-whatsapp="Merhaba, Spinning dersi hakkında bilgi almak istiyorum." target="_blank" rel="noopener">Bu derse katıl <i data-icon="arrow-up-right"></i></a>
                 </div>
               </div>
             </li>
@@ -654,7 +643,7 @@
               <div class="class-row__body">
                 <div class="class-row__inner">
                   <p>Dans eşliğinde eğlenceli ve enerjik bir kardiyo deneyimi yaşa.</p>
-                  <a class="link-arrow" href="https://wa.me/905520346777" data-wa="Merhaba, Zumba dersi hakkında bilgi almak istiyorum." target="_blank" rel="noopener">Bu derse katıl <i data-icon="arrow-up-right"></i></a>
+                  <a class="link-arrow" href="https://wa.me/905520346777" data-whatsapp="Merhaba, Zumba dersi hakkında bilgi almak istiyorum." target="_blank" rel="noopener">Bu derse katıl <i data-icon="arrow-up-right"></i></a>
                 </div>
               </div>
             </li>
@@ -669,7 +658,7 @@
               <div class="class-row__body">
                 <div class="class-row__inner">
                   <p>Hafif ağırlıklarla yüksek tekrarlı kas dayanıklılığı antrenmanı.</p>
-                  <a class="link-arrow" href="https://wa.me/905520346777" data-wa="Merhaba, Body Pump dersi hakkında bilgi almak istiyorum." target="_blank" rel="noopener">Bu derse katıl <i data-icon="arrow-up-right"></i></a>
+                  <a class="link-arrow" href="https://wa.me/905520346777" data-whatsapp="Merhaba, Body Pump dersi hakkında bilgi almak istiyorum." target="_blank" rel="noopener">Bu derse katıl <i data-icon="arrow-up-right"></i></a>
                 </div>
               </div>
             </li>
@@ -684,7 +673,7 @@
               <div class="class-row__body">
                 <div class="class-row__inner">
                   <p>Farklı disiplinleri birleştiren yoğun ve sonuç odaklı antrenmanlar.</p>
-                  <a class="link-arrow" href="https://wa.me/905520346777" data-wa="Merhaba, Cross Training dersi hakkında bilgi almak istiyorum." target="_blank" rel="noopener">Bu derse katıl <i data-icon="arrow-up-right"></i></a>
+                  <a class="link-arrow" href="https://wa.me/905520346777" data-whatsapp="Merhaba, Cross Training dersi hakkında bilgi almak istiyorum." target="_blank" rel="noopener">Bu derse katıl <i data-icon="arrow-up-right"></i></a>
                 </div>
               </div>
             </li>
@@ -699,7 +688,7 @@
               <div class="class-row__body">
                 <div class="class-row__inner">
                   <p>Step platformu üzerinde ritimli hareketlerle hem eğlen hem kardiyo yap.</p>
-                  <a class="link-arrow" href="https://wa.me/905520346777" data-wa="Merhaba, Step Aerobik dersi hakkında bilgi almak istiyorum." target="_blank" rel="noopener">Bu derse katıl <i data-icon="arrow-up-right"></i></a>
+                  <a class="link-arrow" href="https://wa.me/905520346777" data-whatsapp="Merhaba, Step Aerobik dersi hakkında bilgi almak istiyorum." target="_blank" rel="noopener">Bu derse katıl <i data-icon="arrow-up-right"></i></a>
                 </div>
               </div>
             </li>
@@ -714,7 +703,7 @@
               <div class="class-row__body">
                 <div class="class-row__inner">
                   <p>Teknik boks hareketleriyle hem stres at hem de tüm vücudunu çalıştır.</p>
-                  <a class="link-arrow" href="https://wa.me/905520346777" data-wa="Merhaba, Boks dersi hakkında bilgi almak istiyorum." target="_blank" rel="noopener">Bu derse katıl <i data-icon="arrow-up-right"></i></a>
+                  <a class="link-arrow" href="https://wa.me/905520346777" data-whatsapp="Merhaba, Boks dersi hakkında bilgi almak istiyorum." target="_blank" rel="noopener">Bu derse katıl <i data-icon="arrow-up-right"></i></a>
                 </div>
               </div>
             </li>
@@ -729,7 +718,7 @@
               <div class="class-row__body">
                 <div class="class-row__inner">
                   <p>Kas gruplarını derinlemesine uzatarak esnekliğini ve hareketliliğini artır.</p>
-                  <a class="link-arrow" href="https://wa.me/905520346777" data-wa="Merhaba, Stretching dersi hakkında bilgi almak istiyorum." target="_blank" rel="noopener">Bu derse katıl <i data-icon="arrow-up-right"></i></a>
+                  <a class="link-arrow" href="https://wa.me/905520346777" data-whatsapp="Merhaba, Stretching dersi hakkında bilgi almak istiyorum." target="_blank" rel="noopener">Bu derse katıl <i data-icon="arrow-up-right"></i></a>
                 </div>
               </div>
             </li>
@@ -744,7 +733,7 @@
               <div class="class-row__body">
                 <div class="class-row__inner">
                   <p>Swiss Fit Club'a özel güçlendirme programıyla tüm kas gruplarını dengeli çalıştır.</p>
-                  <a class="link-arrow" href="https://wa.me/905520346777" data-wa="Merhaba, Swiss Stronger dersi hakkında bilgi almak istiyorum." target="_blank" rel="noopener">Bu derse katıl <i data-icon="arrow-up-right"></i></a>
+                  <a class="link-arrow" href="https://wa.me/905520346777" data-whatsapp="Merhaba, Swiss Stronger dersi hakkında bilgi almak istiyorum." target="_blank" rel="noopener">Bu derse katıl <i data-icon="arrow-up-right"></i></a>
                 </div>
               </div>
             </li>
@@ -759,7 +748,7 @@
               <div class="class-row__body">
                 <div class="class-row__inner">
                   <p>Karın ve core bölgesine odaklanan yoğun antrenmanlarla sıkı bir mideye kavuş.</p>
-                  <a class="link-arrow" href="https://wa.me/905520346777" data-wa="Merhaba, Abs Burn dersi hakkında bilgi almak istiyorum." target="_blank" rel="noopener">Bu derse katıl <i data-icon="arrow-up-right"></i></a>
+                  <a class="link-arrow" href="https://wa.me/905520346777" data-whatsapp="Merhaba, Abs Burn dersi hakkında bilgi almak istiyorum." target="_blank" rel="noopener">Bu derse katıl <i data-icon="arrow-up-right"></i></a>
                 </div>
               </div>
             </li>
@@ -776,7 +765,6 @@
         </div>
       </section>
 
-      <!-- ═════════════ HOURS ═════════════ -->
       <section class="hours section" id="saatler">
         <div class="container">
           <div class="section-head">
@@ -803,11 +791,11 @@
               </dl>
             </div>
 
-            <div class="timeline" data-timeline data-reveal="fade">
+            <div class="timeline" data-reveal="fade">
               <div class="timeline__legend">
-                <span><i class="sw sw--gym"></i>Kulüp açık</span>
-                <span><i class="sw sw--class"></i>Grup dersleri</span>
-                <span><i class="sw sw--now"></i>Şu an</span>
+                <span><i class="timeline__swatch timeline__swatch--hours"></i>Kulüp açık</span>
+                <span><i class="timeline__swatch timeline__swatch--classes"></i>Grup dersleri</span>
+                <span><i class="timeline__swatch timeline__swatch--now"></i>Şu an</span>
               </div>
               <div class="timeline__chart" role="img" aria-label="Haftalık çalışma saatleri: hafta içi 07:00–23:00, hafta sonu 08:00–22:00; grup dersleri hafta içi 07:00–21:00, hafta sonu 09:00–19:00">
                 <div class="timeline__axis" aria-hidden="true"></div>
@@ -818,7 +806,6 @@
         </div>
       </section>
 
-      <!-- ═════════════ MEMBERSHIP ═════════════ -->
       <section class="membership section" id="uyelik">
         <div class="container">
           <div class="section-head">
@@ -836,7 +823,7 @@
                 <button type="button" role="tab" aria-selected="false" data-plan="1">3 Aylık</button>
                 <button type="button" role="tab" aria-selected="false" data-plan="2">6 Aylık</button>
                 <button type="button" role="tab" aria-selected="true" data-plan="3" class="is-active">Yıllık</button>
-                <span class="plan-switch__indicator" aria-hidden="true"></span>
+                <span class="segment-indicator" aria-hidden="true"></span>
               </div>
 
               <div class="plan__body" role="tabpanel" aria-live="polite">
@@ -873,7 +860,7 @@
               <a
                 class="btn btn--light btn--block"
                 href="https://wa.me/905520346777"
-                data-wa="Merhaba, ücretsiz deneme dersi için randevu almak istiyorum."
+                data-whatsapp="Merhaba, ücretsiz deneme dersi için randevu almak istiyorum."
                 target="_blank"
                 rel="noopener"
                 data-magnetic
@@ -886,11 +873,10 @@
         </div>
       </section>
 
-      <!-- ═════════════ INSTAGRAM ═════════════ -->
       <section class="insta" aria-labelledby="insta-title">
         <a class="insta__band" href="https://www.instagram.com/swissfitclub/" target="_blank" rel="noopener" data-cursor="Takip Et">
           <h2 class="visually-hidden" id="insta-title">Instagram'da Swiss Fit Club</h2>
-          <div class="insta__marquee" data-marquee="1" aria-hidden="true">
+          <div class="insta__marquee" data-marquee="left" aria-hidden="true">
             <div class="ribbon__track">
               <span lang="en">@swissfitclub</span><i data-icon="instagram"></i><span class="text-outline">Bizi takip et</span><i data-icon="instagram"></i>
               <span lang="en">@swissfitclub</span><i data-icon="instagram"></i><span class="text-outline">Bizi takip et</span><i data-icon="instagram"></i>
@@ -927,7 +913,6 @@
         </div>
       </section>
 
-      <!-- ═════════════ FAQ ═════════════ -->
       <section class="faq section" id="sss">
         <div class="container faq__grid">
           <div class="faq__intro">
@@ -935,40 +920,39 @@
             <h2 class="display" data-reveal="lines">Merak<br />edilenler.</h2>
             <div class="faq__help" data-reveal="fade">
               <p>Aradığın cevabı bulamadın mı? Ekibimiz bir mesaj uzağında.</p>
-              <a class="link-arrow" href="https://wa.me/905520346777" data-wa="Merhaba, bir sorum var." target="_blank" rel="noopener">WhatsApp'tan sor <i data-icon="arrow-up-right"></i></a>
+              <a class="link-arrow" href="https://wa.me/905520346777" data-whatsapp="Merhaba, bir sorum var." target="_blank" rel="noopener">WhatsApp'tan sor <i data-icon="arrow-up-right"></i></a>
             </div>
           </div>
 
-          <div class="accordion" data-reveal="stagger">
-            <details class="acc">
-              <summary><span>Ücretsiz deneme dersi var mı?</span><span class="acc__icon" aria-hidden="true"></span></summary>
-              <div class="acc__body"><p>Evet! Swiss Fit Club'ı yakından tanıman için ücretsiz deneme dersi imkânı sunuyoruz. Kulübümüzü risk almadan keşfedebilirsin; randevu için WhatsApp'tan yazman yeterli.</p></div>
+          <div class="faq__list" data-reveal="stagger">
+            <details class="faq-item">
+              <summary><span>Ücretsiz deneme dersi var mı?</span><span class="faq-item__icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>Evet! Swiss Fit Club'ı yakından tanıman için ücretsiz deneme dersi imkânı sunuyoruz. Kulübümüzü risk almadan keşfedebilirsin; randevu için WhatsApp'tan yazman yeterli.</p></div>
             </details>
-            <details class="acc">
-              <summary><span>Üyelik fiyatları nasıl?</span><span class="acc__icon" aria-hidden="true"></span></summary>
-              <div class="acc__body"><p>Farklı bütçelere uygun esnek üyelik paketlerimiz var: aylık, 3 aylık, 6 aylık ve yıllık. Güncel fiyat ve kampanya bilgisi için bizimle iletişime geçebilirsin.</p></div>
+            <details class="faq-item">
+              <summary><span>Üyelik fiyatları nasıl?</span><span class="faq-item__icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>Farklı bütçelere uygun esnek üyelik paketlerimiz var: aylık, 3 aylık, 6 aylık ve yıllık. Güncel fiyat ve kampanya bilgisi için bizimle iletişime geçebilirsin.</p></div>
             </details>
-            <details class="acc">
-              <summary><span>Grup dersleri hangi saatlerde yapılıyor?</span><span class="acc__icon" aria-hidden="true"></span></summary>
-              <div class="acc__body"><p>Grup derslerimiz hafta içi 07:00 – 21:00, hafta sonu 09:00 – 19:00 arasında farklı saatlerde düzenlenir. HIIT, Pilates, Yoga, Spinning, Zumba ve daha birçok ders seçeneğimiz mevcut.</p></div>
+            <details class="faq-item">
+              <summary><span>Grup dersleri hangi saatlerde yapılıyor?</span><span class="faq-item__icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>Grup derslerimiz hafta içi 07:00 – 21:00, hafta sonu 09:00 – 19:00 arasında farklı saatlerde düzenlenir. HIIT, Pilates, Yoga, Spinning, Zumba ve daha birçok ders seçeneğimiz mevcut.</p></div>
             </details>
-            <details class="acc">
-              <summary><span>Personal trainer hizmeti sunuyor musunuz?</span><span class="acc__icon" aria-hidden="true"></span></summary>
-              <div class="acc__body"><p>Evet. Sertifikalı personal trainer kadromuzla birebir kişisel antrenman hizmeti sunuyoruz. Hedeflerine özel programlarla en hızlı şekilde ilerleyebilirsin.</p></div>
+            <details class="faq-item">
+              <summary><span>Personal trainer hizmeti sunuyor musunuz?</span><span class="faq-item__icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>Evet. Sertifikalı personal trainer kadromuzla birebir kişisel antrenman hizmeti sunuyoruz. Hedeflerine özel programlarla en hızlı şekilde ilerleyebilirsin.</p></div>
             </details>
-            <details class="acc">
-              <summary><span>Hangi hizmetleri sunuyorsunuz?</span><span class="acc__icon" aria-hidden="true"></span></summary>
-              <div class="acc__body"><p>Bireysel antrenman, personal trainer, vücut analizi, beslenme danışmanlığı, grup dersleri, reformer pilates, fonksiyonel antrenman, boks alanı, kardiyo ve ağırlık alanları, kadınlara özel alan, vitamin bar, çocuk oyun alanı ve daha fazlası.</p></div>
+            <details class="faq-item">
+              <summary><span>Hangi hizmetleri sunuyorsunuz?</span><span class="faq-item__icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>Bireysel antrenman, personal trainer, vücut analizi, beslenme danışmanlığı, grup dersleri, reformer pilates, fonksiyonel antrenman, boks alanı, kardiyo ve ağırlık alanları, kadınlara özel alan, vitamin bar, çocuk oyun alanı ve daha fazlası.</p></div>
             </details>
-            <details class="acc">
-              <summary><span>Swiss Fit Club nerede?</span><span class="acc__icon" aria-hidden="true"></span></summary>
-              <div class="acc__body"><p>Beylikdüzü'nde, Beykent Paradise AVM'nin 5. katındayız. Toplu taşıma ve özel araçla kolayca ulaşılabilir, merkezi bir konumdayız.</p></div>
+            <details class="faq-item">
+              <summary><span>Swiss Fit Club nerede?</span><span class="faq-item__icon" aria-hidden="true"></span></summary>
+              <div class="faq-item__body"><p>Beylikdüzü'nde, Beykent Paradise AVM'nin 5. katındayız. Toplu taşıma ve özel araçla kolayca ulaşılabilir, merkezi bir konumdayız.</p></div>
             </details>
           </div>
         </div>
       </section>
 
-      <!-- ═════════════ CONTACT ═════════════ -->
       <section class="contact section" id="iletisim">
         <div class="container">
           <div class="section-head">
@@ -985,7 +969,7 @@
                 <span class="contact__icon"><i data-icon="map-pin"></i></span>
                 <div>
                   <span class="contact__label">Adres</span>
-                  <a href="https://maps.google.com/?q=Swiss+Fit+Club+Beykent+Paradise+AVM" target="_blank" rel="noopener">
+                  <a class="contact__value" href="https://maps.google.com/?q=Swiss+Fit+Club+Beykent+Paradise+AVM" target="_blank" rel="noopener">
                     Adnan Kahveci Mah., Yavuz Sultan Selim Blv. No:16/79<br />Paradise AVM 5. Kat, Beylikdüzü / İstanbul
                   </a>
                 </div>
@@ -994,28 +978,28 @@
                 <span class="contact__icon"><i data-icon="phone"></i></span>
                 <div>
                   <span class="contact__label">Telefon</span>
-                  <a href="tel:+905520346777">0552 034 67 77</a>
+                  <a class="contact__value" href="tel:+905520346777">0552 034 67 77</a>
                 </div>
               </li>
               <li>
                 <span class="contact__icon"><i data-icon="whatsapp"></i></span>
                 <div>
                   <span class="contact__label">WhatsApp</span>
-                  <a href="https://wa.me/905520346777" data-wa="Merhaba, bilgi almak istiyorum." target="_blank" rel="noopener">Hemen yaz →</a>
+                  <a class="contact__value" href="https://wa.me/905520346777" data-whatsapp="Merhaba, bilgi almak istiyorum." target="_blank" rel="noopener">Hemen yaz →</a>
                 </div>
               </li>
               <li>
                 <span class="contact__icon"><i data-icon="instagram"></i></span>
                 <div>
                   <span class="contact__label">Instagram</span>
-                  <a href="https://www.instagram.com/swissfitclub/" target="_blank" rel="noopener">@swissfitclub</a>
+                  <a class="contact__value" href="https://www.instagram.com/swissfitclub/" target="_blank" rel="noopener">@swissfitclub</a>
                 </div>
               </li>
               <li>
                 <span class="contact__icon"><i data-icon="clock"></i></span>
                 <div>
                   <span class="contact__label">Saatler</span>
-                  <span>Hafta içi 07:00 – 23:00<br />Hafta sonu 08:00 – 22:00</span>
+                  <span class="contact__value">Hafta içi 07:00 – 23:00<br />Hafta sonu 08:00 – 22:00</span>
                 </div>
               </li>
             </ul>
@@ -1075,7 +1059,6 @@
       </section>
     </main>
 
-    <!-- ═════════════ FOOTER ═════════════ -->
     <footer class="footer">
       <div class="container">
         <div class="footer__cta">
@@ -1083,7 +1066,7 @@
           <a
             class="btn btn--primary btn--lg"
             href="https://wa.me/905520346777"
-            data-wa="Merhaba, Swiss Fit Club'a üye olmak istiyorum."
+            data-whatsapp="Merhaba, Swiss Fit Club'a üye olmak istiyorum."
             target="_blank"
             rel="noopener"
             data-magnetic
@@ -1115,7 +1098,7 @@
           <div>
             <h3>İletişim</h3>
             <a href="tel:+905520346777">0552 034 67 77</a>
-            <a href="https://wa.me/905520346777" data-wa="Merhaba, bilgi almak istiyorum." target="_blank" rel="noopener">WhatsApp</a>
+            <a href="https://wa.me/905520346777" data-whatsapp="Merhaba, bilgi almak istiyorum." target="_blank" rel="noopener">WhatsApp</a>
             <a href="https://www.instagram.com/swissfitclub/" target="_blank" rel="noopener">Instagram</a>
             <span>Paradise AVM 5. Kat, Beylikdüzü</span>
           </div>
@@ -1142,12 +1125,11 @@
       </div>
     </footer>
 
-    <!-- ═════════════ FLOATING ACTIONS ═════════════ -->
     <div class="fab">
       <a class="fab__btn fab__btn--call" href="tel:+905520346777" aria-label="Bizi arayın: 0552 034 67 77">
         <i data-icon="phone"></i><span>Bizi Arayın</span>
       </a>
-      <a class="fab__btn fab__btn--wa" href="https://wa.me/905520346777" data-wa="Merhaba, bilgi almak istiyorum." target="_blank" rel="noopener" aria-label="WhatsApp'tan yazın">
+      <a class="fab__btn fab__btn--wa" href="https://wa.me/905520346777" data-whatsapp="Merhaba, bilgi almak istiyorum." target="_blank" rel="noopener" aria-label="WhatsApp'tan yazın">
         <i data-icon="whatsapp"></i><span>Bize Yazın</span>
       </a>
     </div>

@@ -1,0 +1,70 @@
+.ribbons {
+  position: relative;
+  height: clamp(170px, 20vw, 280px);
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+
+.ribbon {
+  position: absolute;
+  left: -5%;
+  width: 110%;
+  padding: clamp(12px, 1.4vw, 20px) 0;
+  overflow: hidden;
+}
+
+.ribbon--dark {
+  background: var(--surface);
+  border-block: 1px solid var(--line);
+  transform: rotate(3deg);
+}
+
+.ribbon--red {
+  background: var(--red);
+  transform: rotate(-3deg);
+  box-shadow: 0 20px 60px -20px var(--red-glow);
+}
+
+.ribbon__track {
+  display: flex;
+  align-items: center;
+  gap: clamp(20px, 2.6vw, 40px);
+  width: max-content;
+  will-change: transform;
+}
+
+.ribbon__track > * {
+  flex-shrink: 0;
+}
+
+.ribbon__track span {
+  font-family: var(--font-display);
+  font-weight: 850;
+  font-stretch: 75%;
+  font-size: clamp(2rem, 4.6vw, 4.4rem);
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.ribbon__track .icon {
+  font-size: clamp(1.4rem, 2.6vw, 2.4rem);
+}
+
+.ribbon--dark span {
+  color: transparent;
+  -webkit-text-stroke: 1.2px rgba(255, 255, 255, 0.55);
+}
+
+.ribbon--dark .icon {
+  color: var(--red);
+}
+
+.ribbon--red span {
+  color: #0a0a0a;
+}
+
+.ribbon--red .icon {
+  color: #fff;
+}

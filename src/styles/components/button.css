@@ -1,0 +1,132 @@
+.btn {
+  --btn-h: 52px;
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  height: var(--btn-h);
+  padding: 0 8px 0 26px;
+  border-radius: 999px;
+  font-family: var(--font-tech);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: color 0.45s var(--ease-out), box-shadow 0.45s var(--ease-out), border-color 0.45s;
+  will-change: transform;
+}
+
+.btn:not(:has(.btn__icon)) {
+  padding: 0 28px;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  z-index: -1;
+  border-radius: inherit;
+  transform: translateY(102%);
+  transition: transform 0.6s var(--ease-out);
+}
+
+.btn:hover::before,
+.btn:focus-visible::before {
+  transform: translateY(0);
+}
+
+.btn__label,
+.btn__icon {
+  position: relative;
+  pointer-events: none;
+}
+
+.btn__icon {
+  display: grid;
+  place-items: center;
+  width: calc(var(--btn-h) - 14px);
+  height: calc(var(--btn-h) - 14px);
+  border-radius: 50%;
+  font-size: 1.05rem;
+  transition: transform 0.6s var(--ease-out), background 0.45s;
+}
+
+.btn:hover .btn__icon {
+  transform: rotate(45deg);
+}
+
+.btn--sm {
+  --btn-h: 42px;
+}
+
+.btn--lg {
+  --btn-h: 60px;
+  font-size: 0.72rem;
+}
+
+.btn--block {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.btn--primary {
+  background: var(--red);
+  color: #fff;
+  box-shadow: 0 16px 40px -14px var(--red-glow), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.btn--primary::before {
+  background: #fff;
+}
+
+.btn--primary .btn__icon {
+  background: rgba(0, 0, 0, 0.22);
+}
+
+.btn--primary:hover {
+  color: #0a0a0a;
+  box-shadow: 0 22px 60px -16px var(--red-glow);
+}
+
+.btn--primary:hover .btn__icon {
+  background: var(--red);
+  color: #fff;
+}
+
+.btn--ghost {
+  color: #fff;
+  border: 1px solid var(--line-strong);
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.btn--ghost::before {
+  background: #fff;
+}
+
+.btn--ghost:hover {
+  color: #0a0a0a;
+  border-color: #fff;
+}
+
+.btn--light {
+  background: #fff;
+  color: #0a0a0a;
+}
+
+.btn--light::before {
+  background: #0a0a0a;
+}
+
+.btn--light .btn__icon {
+  background: var(--red);
+  color: #fff;
+}
+
+.btn--light:hover {
+  color: #fff;
+}

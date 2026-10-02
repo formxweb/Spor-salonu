@@ -1,0 +1,37 @@
+:root {
+  --red: #e60000;
+  --red-hot: #ff2b2b;
+  --red-deep: #7a0000;
+  --red-glow: rgba(230, 0, 0, 0.55);
+  --green: #2fdc7a;
+
+  --bg: #060606;
+  --bg-2: #0b0b0c;
+  --surface: #111113;
+  --surface-2: #17171a;
+  --line: rgba(255, 255, 255, 0.09);
+  --line-strong: rgba(255, 255, 255, 0.2);
+
+  --text: #f5f4f2;
+  --muted: #a6a6ab;
+  --dim: #6e6e74;
+
+  --font-display: 'Archivo', 'Arial Narrow', system-ui, sans-serif;
+  --font-tech: 'Michroma', 'Archivo', system-ui, sans-serif;
+  --font-body: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.76, 0, 0.24, 1);
+
+  --gutter: clamp(16px, 4vw, 56px);
+  --maxw: 1480px;
+  --radius: 24px;
+  --nav-h: 84px;
+  --section-y: clamp(96px, 13vw, 200px);
+}
+
+@media (max-width: 640px) {
+  :root {
+    --nav-h: 72px;
+  }
+}
